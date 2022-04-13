@@ -16,8 +16,7 @@ public class WebDriverTest extends TestBase {
     public void googleTest(){
        step("open page Google.com",() ->
                open(baseUrl));
-       step("Text search check", () ->
-               $x("//*[contains(text(),'Сервисы Google доступны на этих языках:')]").shouldBe(Condition.visible));
-//       step("find text", ()-> $("[value = Сервисы Google доступны на этих языках:  ]").shouldBe(Condition.visible));
-   }
-}
+//       step("Text search check", () ->
+//               $x("//*[contains(text(),'Сервисы Google доступны на этих языках:')]").shouldBe(Condition.visible));
+//      step("find text", ()-> $("[value = Сервисы Google доступны на этих языках:  ]").shouldBe(Condition.visible));}
+}}
