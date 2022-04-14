@@ -9,12 +9,11 @@ public class DriverSettings {
 
     public static void configure() {
 
-        System.getProperty("properties");
+        System.getProperty("properties", "local");
         Configuration.browser = Project.projectConfig.browser();
         Configuration.browserVersion = Project.projectConfig.browserVersion();
         Configuration.browserSize = Project.projectConfig.browserSize();
-        Configuration.baseUrl = Project.projectConfig.baseUrl();
-        Configuration.remote = Project.projectConfig.remoteDriverUrl();
+        Configuration.baseUrl = Project.projectConfig.webUrl();
 
         DesiredCapabilities capabilities = new DesiredCapabilities();
         ChromeOptions chromeOptions = new ChromeOptions();
@@ -22,8 +21,7 @@ public class DriverSettings {
         if (Project.isRemoteWebDriver()) {
             capabilities.setCapability("enableVNC", true);
             capabilities.setCapability("enableVideo", true);
-//            Configuration.remote = "https://user1:1234@selenoid.autotests.cloud/wd/hub";
-//            Configuration.remote = Project.projectConfig.remoteDriverUrl();
+            Configuration.remote = Project.projectConfig.remoteDriverUrl();
         }
 
         capabilities.setCapability(ChromeOptions.CAPABILITY, chromeOptions);

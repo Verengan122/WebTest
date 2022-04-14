@@ -9,6 +9,5 @@ public class Project {
         public static boolean isRemoteWebDriver() {
             return !projectConfig.remoteDriverUrl().equals("");
         }
-
     }
 
